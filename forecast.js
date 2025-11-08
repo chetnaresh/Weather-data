@@ -60,7 +60,7 @@ async function loadForecast(){
         const { lat, lon, name, country } = geo[0];
         const locationName = country ? `${name}, ${country}` : name;
         const titleEl = document.getElementById('locationName');
-        if(titleEl) titleEl.textContent = `5-Day Forecast for ${locationName}`;
+        if(titleEl) titleEl.textContent = `Weather Forecast for ${locationName}`;
 
         // fetch 5-day forecast (3-hour bins)
         const fRes = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`);
@@ -89,9 +89,9 @@ function renderForecast(forecast){
         byDay[dayKey].push(item);
     });
 
-    const days = Object.keys(byDay).slice(0,6); // may include today; we'll take next 5 meaningful entries
+    const days = Object.keys(byDay).slice(0,8); // may include today; we'll take next 7 meaningful entries
     const picks = [];
-    for(let k=0;k<days.length && picks.length<5;k++){
+    for(let k=0;k<days.length && picks.length<7;k++){
         const arr = byDay[days[k]];
         // try to find entry at 12:00
         let pick = arr.find(it => new Date(it.dt*1000).getHours() === 12) || arr[Math.floor(arr.length/2)];
