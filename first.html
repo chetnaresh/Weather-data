@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Weather Background Changer</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<div class="app">
+		<header class="controls">
+			<input id="cityInput" type="text" placeholder="Enter place (city, state, country or lat,lon)" aria-label="Place" />
+			<button id="searchBtn">Search</button>
+				<a id="fullPageBtn" class="button" href="forecast.html" style="padding:0.5rem 0.8rem;border-radius:6px;background:rgba(0,0,0,0.18);color:var(--fg);text-decoration:none;display:inline-block;margin-left:0.25rem;">View Forecast 📅</a>
+			<button id="geoBtn">Use my location</button>
+			<div id="status" style="margin-left:1rem;color:var(--muted);font-size:0.95rem"></div>
+		</header>
+
+		<main>
+			<div class="card">
+				<h1 id="loc">Weather Background Changer</h1>
+				<p class="lead" id="desc">Enter a place or use your location to see the background update with current weather.</p>
+
+				<div class="datetime" style="margin:0.5rem 0 0.8rem 0;display:flex;gap:1rem;justify-content:center;align-items:center;flex-wrap:wrap">
+					<div id="currentDate" style="font-weight:700"></div>
+					<div id="currentTime" style="color:var(--muted)"></div>
+				</div>
+
+				<div class="meta" aria-live="polite">
+					<div id="temp">—</div>
+					<div id="cond">—</div>
+					<div id="time">—</div>
+					<div id="humidity">—</div>
+					<div id="wind">—</div>
+					<div id="visibility">—</div>
+					<div id="icon" style="display:flex;align-items:center;justify-content:center;"><img id="weatherIcon" alt="" style="width:48px;height:48px;display:none"></div>
+				</div>
+
+				<!-- Current weather and temperature graph -->
+				<div class="weather-animation-container"></div>
+				
+				<!-- Temperature Graph -->
+				<div class="chart-container">
+					<h3>Today's Temperature Trend</h3>
+					<!-- normal height for better visibility of temperature variations -->
+					<canvas id="tempChart" width="600" height="200"></canvas>
+				</div>
+			</div>
+		</main>
+
+		<footer class="note">This demo uses OpenWeatherMap's Current Weather API. Replace the API key inside <code>app.js</code> with your own for local testing.</footer>
+	</div>
+
+	<script src="app.js"></script>
+</body>
+</html>
+

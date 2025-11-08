@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-Day Weather Forecast</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app">
+        <header class="controls">
+            <a href="first.html" class="back-button">← Back to Current Weather</a>
+            <div id="status" class="status-message"></div>
+        </header>
+
+        <main>
+            <div class="forecast-card">
+                <h1 id="locationName">5-Day Weather Forecast</h1>
+                
+                <div class="forecast-header">
+                    <div id="currentDate"></div>
+                </div>
+
+                <!-- Temperature Chart -->
+                <div class="chart-container">
+                    <h2>📈 Temperature Trend</h2>
+                    <!-- smaller explicit height for more compact display -->
+                    <canvas id="tempChart" height="90"></canvas>
+                </div>
+
+                <!-- 5-Day Forecast with Animations -->
+                <div class="forecast-section">
+                    <h2>5-Day Forecast</h2>
+                    <div class="forecast-grid" id="forecastGrid"></div>
+                </div>
+
+                <!-- Weather Animations Container -->
+                <div class="weather-animation-container"></div>
+
+                <!-- Weather Legend -->
+                <div class="weather-legend">
+                    <div class="legend-item">
+                        <span class="weather-emoji">☀️</span>
+                        <span>Sunny</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="weather-emoji">🌤️</span>
+                        <span>Partly Cloudy</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="weather-emoji">🌧️</span>
+                        <span>Rain</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="weather-emoji">⛈️</span>
+                        <span>Storm</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="weather-emoji">🌨️</span>
+                        <span>Snow</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="forecast.js"></script>
+</body>
+</html>
