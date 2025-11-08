@@ -40,7 +40,7 @@ A dynamic weather dashboard that provides current weather conditions and 5-day f
 1. **Setup**
    ```bash
    # Clone or download the repository
-   # Open first.html in a web browser
+   # Open index.html in a web browser
    ```
 
 2. **API Key**
@@ -49,8 +49,8 @@ A dynamic weather dashboard that provides current weather conditions and 5-day f
    - Get your API key at: https://openweathermap.org/api
 
 3. **Files Structure**
-   - `first.html` - Main weather dashboard
-   - `forecast.html` - 5-day forecast page
+   - `index.html` - Main weather dashboard
+   - `forecast.html` - Weather forecast page
    - `app.js` - Main application logic
    - `forecast.js` - Forecast page logic
    - `styles.css` - Styling and animations
